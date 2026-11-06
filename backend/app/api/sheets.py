@@ -123,3 +123,4 @@ async def view_sheet(sheet_id: str):
         raise HTTPException(status_code=404, detail="Photo sheet not found")
 
     return FileResponse(path=path, media_type="image/jpeg")
+

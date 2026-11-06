@@ -68,3 +68,4 @@ def save_settings(new_settings: AppSettings) -> AppSettings:
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(new_settings.model_dump(), f, indent=2)
     return _settings_instance
+

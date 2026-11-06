@@ -192,3 +192,4 @@ class PhotoSheetGenerator:
 
 
 sheet_generator = PhotoSheetGenerator()
+

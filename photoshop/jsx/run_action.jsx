@@ -153,3 +153,4 @@ try {
 
 app.preferences.rulerUnits = origRuler;
 writeJsonFile(resultFile, result);
+

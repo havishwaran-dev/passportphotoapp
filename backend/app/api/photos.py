@@ -384,3 +384,4 @@ async def view_photo(photo_id: str):
 
     media_type = "image/png" if path.suffix.lower() == ".png" else "image/jpeg"
     return FileResponse(path=path, media_type=media_type)
+

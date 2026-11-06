@@ -15,3 +15,4 @@ async def get_history(limit: int = 50):
 async def get_statistics():
     """Returns dashboard statistics (photos today, total photos, etc.)."""
     return job_manager.get_stats()
+

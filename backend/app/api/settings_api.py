@@ -12,3 +12,4 @@ async def fetch_settings():
 async def update_settings(new_settings: AppSettings):
     """Updates and saves persistent application settings."""
     return save_settings(new_settings)
+

@@ -73,6 +73,11 @@ async def health_check():
         stats=stats
     )
 
+# Mount frontend production build if available (must be mounted after all API routes)
+dist_dir = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+if dist_dir.exists():
+    app.mount("/", StaticFiles(directory=str(dist_dir), html=True), name="frontend")
+
 @app.on_event("startup")
 async def on_startup():
     logger.info("Starting PJK Passport Photo Automation Studio Backend...")

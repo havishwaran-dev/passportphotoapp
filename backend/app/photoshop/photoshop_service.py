@@ -237,12 +237,23 @@ class PhotoshopService:
 
             # 2. Check SkinFiner
             skinfiner_ok, _ = self.check_skinfiner_installed()
-            if not skinfiner_ok and not self.settings.auto_fallback_enhancement:
-                return {
-                    "success": False,
-                    "error": "SkinFiner plugin is missing in Photoshop. Please install SkinFiner or enable Auto Fallback in Settings.",
-                    "plugin_missing": True
-                }
+            if not skinfiner_ok:
+                if self.settings.auto_fallback_enhancement:
+                    logger.info("SkinFiner plugin not installed in Photoshop. Instantly using built-in studio passport enhancement fallback...")
+                    self.native_studio_enhancement(input_image_path, output_image_path)
+                    return {
+                        "success": True,
+                        "fallback_used": True,
+                        "plugin_missing": True,
+                        "message": "SkinFiner plugin is not installed in Photoshop. Processed using built-in Studio Passport Engine.",
+                        "output_path": output_image_path
+                    }
+                else:
+                    return {
+                        "success": False,
+                        "error": "SkinFiner plugin is missing in Photoshop. Please install SkinFiner or enable Auto Fallback in Settings.",
+                        "plugin_missing": True
+                    }
 
             # 3. Check action file
             act_ok, act_path = self.check_action_file()
@@ -369,3 +380,4 @@ class PhotoshopService:
 
 
 photoshop_service = PhotoshopService()
+

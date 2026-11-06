@@ -82,3 +82,4 @@ try {
 
 app.preferences.rulerUnits = origRuler;
 writeJsonFile("C:/FreePro/passportphotoapp/backend/temp/ps_probe_result.json", result);
+

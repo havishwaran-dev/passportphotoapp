@@ -90,3 +90,4 @@ class BackgroundRemoverService:
 
 
 background_remover = BackgroundRemoverService()
+

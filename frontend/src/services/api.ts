@@ -3,8 +3,7 @@ import {
   AppSettings,
   JobResponse,
   PhotoUploadResponse,
-  PhotoInfo,
-  SheetPhotoItem
+  PhotoInfo
 } from '../types';
 
 const API_BASE = '';

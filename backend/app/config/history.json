@@ -1,5 +1,309 @@
 [
   {
+    "id": "1d9b70c3-b382-40d9-b7e2-705e02a2c802",
+    "mode": "complete",
+    "status": "completed",
+    "progress": 100,
+    "message": "Action 'passport' in set 'PJK' completed successfully.",
+    "created_at": "2026-11-06T22:57:48.071663",
+    "updated_at": "2026-11-06T22:58:13.825565",
+    "completed_at": "2026-11-06T22:58:13.825565",
+    "input_photo_id": "a8dfbb8d-4918-42b8-84a3-8dee98ce4409",
+    "output_photo_id": "53fded3f-8647-4086-bd99-0866f406087e",
+    "sheet_id": null,
+    "result_url": "/api/photos/53fded3f-8647-4086-bd99-0866f406087e/download",
+    "preview_url": "/api/photos/53fded3f-8647-4086-bd99-0866f406087e/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF",
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "5c1dd679-3bf3-4d36-ab19-87ca50ba9748",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-06T22:56:59.191532",
+    "updated_at": "2026-11-06T22:57:00.524372",
+    "completed_at": "2026-11-06T22:57:00.524372",
+    "input_photo_id": "1ac6503a-8008-47b0-9f07-7f3e1ea1e883",
+    "output_photo_id": "28c5446e-ccaa-4a64-b113-f151c66abb44",
+    "sheet_id": null,
+    "result_url": "/api/photos/28c5446e-ccaa-4a64-b113-f151c66abb44/download",
+    "preview_url": "/api/photos/28c5446e-ccaa-4a64-b113-f151c66abb44/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#F4F6F9"
+    }
+  },
+  {
+    "id": "ea639da1-7e08-49f6-aa6f-473de99ad89b",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-06T22:56:54.396894",
+    "updated_at": "2026-11-06T22:56:55.871559",
+    "completed_at": "2026-11-06T22:56:55.871559",
+    "input_photo_id": "1ac6503a-8008-47b0-9f07-7f3e1ea1e883",
+    "output_photo_id": "64a11946-948f-4edf-be67-9c5ad3442eef",
+    "sheet_id": null,
+    "result_url": "/api/photos/64a11946-948f-4edf-be67-9c5ad3442eef/download",
+    "preview_url": "/api/photos/64a11946-948f-4edf-be67-9c5ad3442eef/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#003366"
+    }
+  },
+  {
+    "id": "2d4be4ae-64b5-4cca-9bab-ca750030725f",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-06T22:56:45.551742",
+    "updated_at": "2026-11-06T22:56:46.902215",
+    "completed_at": "2026-11-06T22:56:46.902215",
+    "input_photo_id": "1ac6503a-8008-47b0-9f07-7f3e1ea1e883",
+    "output_photo_id": "96963da4-4021-4ae2-b37c-fa408921178a",
+    "sheet_id": null,
+    "result_url": "/api/photos/96963da4-4021-4ae2-b37c-fa408921178a/download",
+    "preview_url": "/api/photos/96963da4-4021-4ae2-b37c-fa408921178a/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF"
+    }
+  },
+  {
+    "id": "3a8d6b21-af13-4f70-aa8a-5af6054a8da7",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (6 photos placed).",
+    "created_at": "2026-11-06T22:56:31.593266",
+    "updated_at": "2026-11-06T22:56:31.822697",
+    "completed_at": "2026-11-06T22:56:31.822697",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "362dccbf-aeee-457e-ad4f-5df19a07e995",
+    "result_url": "/api/sheets/362dccbf-aeee-457e-ad4f-5df19a07e995/download",
+    "preview_url": "/api/sheets/362dccbf-aeee-457e-ad4f-5df19a07e995/view",
+    "error": null,
+    "meta": {
+      "orientation": "landscape",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_362dccbf-aeee-457e-ad4f-5df19a07e995.jpg",
+      "width_px": 1800,
+      "height_px": 1200,
+      "dpi": 300,
+      "columns": 3,
+      "rows": 2,
+      "total_slots": 6,
+      "photos_placed": 6,
+      "slots": [
+        {
+          "x": 245,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 245,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "c3b085af-c6bc-40ff-a7e2-3de35846fa88",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (4 photos placed).",
+    "created_at": "2026-11-06T22:56:16.189629",
+    "updated_at": "2026-11-06T22:56:16.428039",
+    "completed_at": "2026-11-06T22:56:16.428039",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "40507e2c-98a2-4241-b0bc-bb81dbba8668",
+    "result_url": "/api/sheets/40507e2c-98a2-4241-b0bc-bb81dbba8668/download",
+    "preview_url": "/api/sheets/40507e2c-98a2-4241-b0bc-bb81dbba8668/view",
+    "error": null,
+    "meta": {
+      "orientation": "portrait",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_40507e2c-98a2-4241-b0bc-bb81dbba8668.jpg",
+      "width_px": 1200,
+      "height_px": 1800,
+      "dpi": 300,
+      "columns": 2,
+      "rows": 2,
+      "total_slots": 4,
+      "photos_placed": 4,
+      "slots": [
+        {
+          "x": 169,
+          "y": 351,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 617,
+          "y": 351,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 169,
+          "y": 917,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 617,
+          "y": 917,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "1a95d8a4-655d-461d-b9f2-cababefbab3d",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (6 photos placed).",
+    "created_at": "2026-11-06T22:55:57.950662",
+    "updated_at": "2026-11-06T22:55:58.280317",
+    "completed_at": "2026-11-06T22:55:58.280317",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "17031c30-5e87-4a85-8b52-b2fbc94c35b0",
+    "result_url": "/api/sheets/17031c30-5e87-4a85-8b52-b2fbc94c35b0/download",
+    "preview_url": "/api/sheets/17031c30-5e87-4a85-8b52-b2fbc94c35b0/view",
+    "error": null,
+    "meta": {
+      "orientation": "landscape",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_17031c30-5e87-4a85-8b52-b2fbc94c35b0.jpg",
+      "width_px": 1800,
+      "height_px": 1200,
+      "dpi": 300,
+      "columns": 3,
+      "rows": 2,
+      "total_slots": 6,
+      "photos_placed": 6,
+      "slots": [
+        {
+          "x": 245,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 245,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "b243fda9-5f8d-4440-8145-7f70716d174e",
+    "mode": "complete",
+    "status": "completed",
+    "progress": 100,
+    "message": "Action 'passport' in set 'PJK' completed successfully.",
+    "created_at": "2026-11-06T22:55:01.563821",
+    "updated_at": "2026-11-06T22:55:34.994686",
+    "completed_at": "2026-11-06T22:55:34.994686",
+    "input_photo_id": "1ac6503a-8008-47b0-9f07-7f3e1ea1e883",
+    "output_photo_id": "ea282c3f-f4de-431b-a442-6dc4e3bb0e78",
+    "sheet_id": null,
+    "result_url": "/api/photos/ea282c3f-f4de-431b-a442-6dc4e3bb0e78/download",
+    "preview_url": "/api/photos/ea282c3f-f4de-431b-a442-6dc4e3bb0e78/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF",
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "f84e65dd-112b-4995-a88b-cab7925d99cc",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Done",
+    "created_at": "2026-11-06T22:52:06.923631",
+    "updated_at": "2026-11-06T22:52:06.925878",
+    "completed_at": "2026-11-06T22:52:06.925878",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": null,
+    "result_url": null,
+    "preview_url": null,
+    "error": null,
+    "meta": {
+      "test": true
+    }
+  },
+  {
     "id": "37b3decf-4336-4ae2-a321-4c8d1e5d0423",
     "mode": "passport",
     "status": "completed",
