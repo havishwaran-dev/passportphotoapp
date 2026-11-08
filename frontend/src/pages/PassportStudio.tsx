@@ -442,6 +442,13 @@ export const PassportStudio: React.FC<PassportStudioProps> = ({
                     </p>
                   </button>
                 </div>
+
+                <div className="flex items-center space-x-2 text-[11px] text-slate-600 bg-blue-50/60 border border-blue-200 rounded-xl px-3 py-2 mt-2">
+                  <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span>
+                    <strong>Photoshop CS6 Ready:</strong> Operates natively in Adobe Photoshop CS6 using built-in Surface Blur. <strong>No SkinFiner plugin required.</strong>
+                  </span>
+                </div>
               </div>
 
               {/* Action Button */}

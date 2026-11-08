@@ -289,6 +289,25 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
 
           <div>
             <label className="text-xs font-semibold text-slate-700 block mb-1">
+              Photoshop Processing Mode
+            </label>
+            <select
+              value={form.photoshop_engine_mode || 'auto'}
+              onChange={(e) => handleChange('photoshop_engine_mode', e.target.value)}
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-slate-800"
+            >
+              <option value="auto">Auto (Photoshop CS6 Native if SkinFiner missing - Recommended)</option>
+              <option value="native_cs6">Photoshop CS6 Native Engine (100% Plugin-Free)</option>
+              <option value="action">Photoshop Action (PJK.atn with SkinFiner)</option>
+              <option value="builtin_studio">Fast Built-in Studio Engine (Direct Python)</option>
+            </select>
+            <span className="text-[10px] text-slate-500 mt-1 block">
+              Native CS6 Mode uses Photoshop's built-in Surface Blur filter and works on ANY CS6 system with zero plugin installation.
+            </span>
+          </div>
+
+          <div>
+            <label className="text-xs font-semibold text-slate-700 block mb-1">
               Photoshop Executable Path
             </label>
             <input
@@ -355,30 +374,30 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           </div>
         </div>
 
-        {/* Section 4: SkinFiner Installation Guide */}
-        <div className="bg-slate-50 rounded-3xl p-6 border border-slate-200 md:col-span-2 space-y-3">
-          <div className="flex items-center space-x-2">
-            <Info className="w-4 h-4 text-blue-600" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-              SkinFiner Photoshop Plugin Guide
-            </h3>
+          {/* Section 4: Photoshop CS6 Compatibility Guide */}
+          <div className="bg-blue-50/60 rounded-3xl p-6 border border-blue-200 md:col-span-2 space-y-3">
+            <div className="flex items-center space-x-2">
+              <Info className="w-4 h-4 text-blue-600" />
+                <h3 className="text-xs font-bold uppercase tracking-wider text-blue-900">
+                  Photoshop CS6 Compatibility &amp; SkinFiner Information
+                </h3>
+            </div>
+              <p className="text-xs text-slate-700 leading-relaxed">
+                <strong>No SkinFiner plugin is required!</strong> If you cannot or do not wish to install SkinFiner in Adobe Photoshop CS6, PJK Studio runs Photoshop CS6 using its built-in, native <strong>Surface Blur</strong> edge-preserving skin softening engine.
+              </p>
+                <ul className="text-xs text-slate-600 list-disc list-inside space-y-1 pl-1">
+                  <li>
+                    <strong>Works on all Windows CS6 systems:</strong> 32-bit and 64-bit Photoshop CS6 operate cleanly without third-party plugin errors.
+                  </li>
+                  <li>
+                    <strong>Preserves portrait fidelity:</strong> Retouches skin while keeping eyes, eyebrows, lips, hair, and clothing razor-sharp.
+                  </li>
+                  <li>
+                    <strong>If you do have SkinFiner (.8bf):</strong> You can optionally place <code className="font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200">SkinFiner.8bf</code> in your Photoshop <code className="font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200">Plug-ins\</code> folder and switch the mode above to "Action".
+                  </li>
+            </ul>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            The <code className="font-mono text-blue-800 font-semibold">PJK &gt; passport</code> action uses the <strong>SkinFiner</strong> filter plugin. If you wish to run SkinFiner directly inside Photoshop rather than using the built-in fallback:
-          </p>
-          <ol className="text-xs text-slate-600 list-decimal list-inside space-y-1 pl-1">
-            <li>
-              Locate your <code className="font-mono text-slate-800 font-semibold">SkinFiner.8bf</code> 64-bit plugin file.
-            </li>
-            <li>
-              Copy it into: <code className="font-mono bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-800">C:\Program Files\Adobe\Adobe Photoshop CS6 (x64)\Plug-ins\</code>
-            </li>
-            <li>
-              Restart Adobe Photoshop. The status indicator in the top navbar will turn green.
-            </li>
-          </ol>
         </div>
-      </div>
     </form>
   );
 };

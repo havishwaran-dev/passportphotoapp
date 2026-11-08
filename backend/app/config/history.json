@@ -1,5 +1,400 @@
 [
   {
+    "id": "47c8b231-2a3b-4154-a3da-4c378d2c3641",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-08T10:04:28.400404",
+    "updated_at": "2026-11-08T10:04:32.114483",
+    "completed_at": "2026-11-08T10:04:32.114483",
+    "input_photo_id": "ca120306-f2cd-4b37-b8ed-40ee2b0705a1",
+    "output_photo_id": "64d7aa74-2c03-4fb9-b726-ffd4af558b77",
+    "sheet_id": null,
+    "result_url": "/api/photos/64d7aa74-2c03-4fb9-b726-ffd4af558b77/download",
+    "preview_url": "/api/photos/64d7aa74-2c03-4fb9-b726-ffd4af558b77/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF"
+    }
+  },
+  {
+    "id": "f01bdfb5-6f97-49bf-9f60-0d1fcb269844",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Processed in Adobe Photoshop CS6 using native Surface Blur retouching (no plugins needed).",
+    "created_at": "2026-11-08T10:04:10.092166",
+    "updated_at": "2026-11-08T10:04:12.000684",
+    "completed_at": "2026-11-08T10:04:12.000684",
+    "input_photo_id": "ca120306-f2cd-4b37-b8ed-40ee2b0705a1",
+    "output_photo_id": "1ae60780-5531-49e5-8cb5-4b8ee67de233",
+    "sheet_id": null,
+    "result_url": "/api/photos/1ae60780-5531-49e5-8cb5-4b8ee67de233/download",
+    "preview_url": "/api/photos/1ae60780-5531-49e5-8cb5-4b8ee67de233/view",
+    "error": null,
+    "meta": {
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "69af2237-7a68-4b0f-9e0d-459e5857d7b3",
+    "mode": "complete",
+    "status": "completed",
+    "progress": 100,
+    "message": "Processed in Adobe Photoshop CS6 using native Surface Blur retouching (no plugins needed).",
+    "created_at": "2026-11-08T10:03:51.836613",
+    "updated_at": "2026-11-08T10:03:56.660790",
+    "completed_at": "2026-11-08T10:03:56.660790",
+    "input_photo_id": "ca120306-f2cd-4b37-b8ed-40ee2b0705a1",
+    "output_photo_id": "e73029ff-6ffe-4d7e-9fd4-6c117457618c",
+    "sheet_id": null,
+    "result_url": "/api/photos/e73029ff-6ffe-4d7e-9fd4-6c117457618c/download",
+    "preview_url": "/api/photos/e73029ff-6ffe-4d7e-9fd4-6c117457618c/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF",
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "c5321435-8b90-407c-bb65-fd7951653576",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (6 photos placed).",
+    "created_at": "2026-11-08T10:03:34.579692",
+    "updated_at": "2026-11-08T10:03:34.822155",
+    "completed_at": "2026-11-08T10:03:34.822155",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "49d3441b-78b1-471d-b0f9-f0656cffff2a",
+    "result_url": "/api/sheets/49d3441b-78b1-471d-b0f9-f0656cffff2a/download",
+    "preview_url": "/api/sheets/49d3441b-78b1-471d-b0f9-f0656cffff2a/view",
+    "error": null,
+    "meta": {
+      "orientation": "landscape",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_49d3441b-78b1-471d-b0f9-f0656cffff2a.jpg",
+      "width_px": 1800,
+      "height_px": 1200,
+      "dpi": 300,
+      "columns": 3,
+      "rows": 2,
+      "total_slots": 6,
+      "photos_placed": 6,
+      "slots": [
+        {
+          "x": 245,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 245,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "2c054df8-19da-487e-bc22-f0a504dcde31",
+    "mode": "complete",
+    "status": "completed",
+    "progress": 100,
+    "message": "Processed in Adobe Photoshop CS6 using native Surface Blur retouching (no plugins needed).",
+    "created_at": "2026-11-08T10:03:05.162080",
+    "updated_at": "2026-11-08T10:03:16.603796",
+    "completed_at": "2026-11-08T10:03:16.603796",
+    "input_photo_id": "ca120306-f2cd-4b37-b8ed-40ee2b0705a1",
+    "output_photo_id": "368e3757-c3c7-42c4-b736-44e56cc50708",
+    "sheet_id": null,
+    "result_url": "/api/photos/368e3757-c3c7-42c4-b736-44e56cc50708/download",
+    "preview_url": "/api/photos/368e3757-c3c7-42c4-b736-44e56cc50708/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF",
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "03223789-d288-45ae-a194-44dac40db6ea",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (6 photos placed).",
+    "created_at": "2026-11-08T09:19:15.839434",
+    "updated_at": "2026-11-08T09:19:16.077888",
+    "completed_at": "2026-11-08T09:19:16.077888",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "22ee283f-0ef3-41a4-89d7-7c2ac22eae11",
+    "result_url": "/api/sheets/22ee283f-0ef3-41a4-89d7-7c2ac22eae11/download",
+    "preview_url": "/api/sheets/22ee283f-0ef3-41a4-89d7-7c2ac22eae11/view",
+    "error": null,
+    "meta": {
+      "orientation": "landscape",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_22ee283f-0ef3-41a4-89d7-7c2ac22eae11.jpg",
+      "width_px": 1800,
+      "height_px": 1200,
+      "dpi": 300,
+      "columns": 3,
+      "rows": 2,
+      "total_slots": 6,
+      "photos_placed": 6,
+      "slots": [
+        {
+          "x": 245,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 245,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "3c08c360-55d1-4a10-b2cf-aa63743f0666",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Processed in Adobe Photoshop CS6 using native Surface Blur retouching (no plugins needed).",
+    "created_at": "2026-11-08T09:19:07.849946",
+    "updated_at": "2026-11-08T09:19:15.825883",
+    "completed_at": "2026-11-08T09:19:15.825883",
+    "input_photo_id": "1910e015-4060-44b3-97f0-2d2585c2f9e2",
+    "output_photo_id": "78fd6c18-b09a-4154-ae49-386b90bbda20",
+    "sheet_id": null,
+    "result_url": "/api/photos/78fd6c18-b09a-4154-ae49-386b90bbda20/download",
+    "preview_url": "/api/photos/78fd6c18-b09a-4154-ae49-386b90bbda20/view",
+    "error": null,
+    "meta": {
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "addad165-de7c-400b-abbc-f44acac786eb",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-08T09:19:00.532230",
+    "updated_at": "2026-11-08T09:19:07.831854",
+    "completed_at": "2026-11-08T09:19:07.831854",
+    "input_photo_id": "7771d8c7-f7b3-4e91-b48a-fbd7a155aa95",
+    "output_photo_id": "1910e015-4060-44b3-97f0-2d2585c2f9e2",
+    "sheet_id": null,
+    "result_url": "/api/photos/1910e015-4060-44b3-97f0-2d2585c2f9e2/download",
+    "preview_url": "/api/photos/1910e015-4060-44b3-97f0-2d2585c2f9e2/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF"
+    }
+  },
+  {
+    "id": "6bc66fc3-1745-49c0-82a4-42d1428ace08",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Done",
+    "created_at": "2026-11-08T09:18:54.106778",
+    "updated_at": "2026-11-08T09:18:54.109115",
+    "completed_at": "2026-11-08T09:18:54.109115",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": null,
+    "result_url": null,
+    "preview_url": null,
+    "error": null,
+    "meta": {
+      "test": true
+    }
+  },
+  {
+    "id": "b16f705c-0c18-4ca0-a2a2-0bf5e89db38f",
+    "mode": "sheet",
+    "status": "completed",
+    "progress": 100,
+    "message": "4x6 Photo sheet generated successfully (6 photos placed).",
+    "created_at": "2026-11-08T09:17:47.655728",
+    "updated_at": "2026-11-08T09:17:47.887355",
+    "completed_at": "2026-11-08T09:17:47.887355",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": "d2e67f53-0414-4a19-bfc4-ccd13eb2861e",
+    "result_url": "/api/sheets/d2e67f53-0414-4a19-bfc4-ccd13eb2861e/download",
+    "preview_url": "/api/sheets/d2e67f53-0414-4a19-bfc4-ccd13eb2861e/view",
+    "error": null,
+    "meta": {
+      "orientation": "landscape",
+      "num_photos": 1,
+      "output_path": "C:\\FreePro\\passportphotoapp\\backend\\outputs\\sheet_d2e67f53-0414-4a19-bfc4-ccd13eb2861e.jpg",
+      "width_px": 1800,
+      "height_px": 1200,
+      "dpi": 300,
+      "columns": 3,
+      "rows": 2,
+      "total_slots": 6,
+      "photos_placed": 6,
+      "slots": [
+        {
+          "x": 245,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 51,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 245,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 693,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        },
+        {
+          "x": 1141,
+          "y": 617,
+          "w": 413,
+          "h": 531
+        }
+      ]
+    }
+  },
+  {
+    "id": "bdbfae37-51ed-43bd-8bfa-651b07d828ac",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Processed in Adobe Photoshop CS6 using native Surface Blur retouching (no plugins needed).",
+    "created_at": "2026-11-08T09:17:39.624766",
+    "updated_at": "2026-11-08T09:17:47.626135",
+    "completed_at": "2026-11-08T09:17:47.626135",
+    "input_photo_id": "7d8ce8dd-9479-422d-ab82-3f52585dab95",
+    "output_photo_id": "90362348-a4c4-4dbf-9d9e-c6895fae17f0",
+    "sheet_id": null,
+    "result_url": "/api/photos/90362348-a4c4-4dbf-9d9e-c6895fae17f0/download",
+    "preview_url": "/api/photos/90362348-a4c4-4dbf-9d9e-c6895fae17f0/view",
+    "error": null,
+    "meta": {
+      "fallback_used": false,
+      "plugin_missing": false
+    }
+  },
+  {
+    "id": "1e1bcdf0-64f6-4b09-9433-c98bdc700e04",
+    "mode": "background",
+    "status": "completed",
+    "progress": 100,
+    "message": "Background replaced successfully.",
+    "created_at": "2026-11-08T09:17:23.902783",
+    "updated_at": "2026-11-08T09:17:39.599944",
+    "completed_at": "2026-11-08T09:17:39.599944",
+    "input_photo_id": "6c525d79-dddd-4538-8a6c-fdab64b80eec",
+    "output_photo_id": "7d8ce8dd-9479-422d-ab82-3f52585dab95",
+    "sheet_id": null,
+    "result_url": "/api/photos/7d8ce8dd-9479-422d-ab82-3f52585dab95/download",
+    "preview_url": "/api/photos/7d8ce8dd-9479-422d-ab82-3f52585dab95/view",
+    "error": null,
+    "meta": {
+      "bg_color": "#0080FF"
+    }
+  },
+  {
+    "id": "11aa6594-a045-4ad9-8628-bb3e700f3d0d",
+    "mode": "passport",
+    "status": "completed",
+    "progress": 100,
+    "message": "Done",
+    "created_at": "2026-11-08T09:16:55.973293",
+    "updated_at": "2026-11-08T09:16:55.974811",
+    "completed_at": "2026-11-08T09:16:55.974811",
+    "input_photo_id": null,
+    "output_photo_id": null,
+    "sheet_id": null,
+    "result_url": null,
+    "preview_url": null,
+    "error": null,
+    "meta": {
+      "test": true
+    }
+  },
+  {
     "id": "1d9b70c3-b382-40d9-b7e2-705e02a2c802",
     "mode": "complete",
     "status": "completed",

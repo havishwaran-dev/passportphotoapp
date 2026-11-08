@@ -148,34 +148,28 @@ Double-click `stop.bat` to gracefully terminate all backend and frontend backgro
 
 ---
 
-## 🔌 Adobe Photoshop & SkinFiner Setup
+## 🔌 Adobe Photoshop CS6 Compatibility (No Plugins Required)
 
-### Adobe Photoshop CS6 Configuration
-- The app automatically detects Photoshop at:
-  `C:\Program Files\Adobe\Adobe Photoshop CS6 (x64)\Photoshop.exe`
-- If Photoshop is installed at a different path, navigate to the **Settings** tab in the web interface and enter the custom path.
+### 1. Photoshop CS6 Native Studio Engine (Recommended)
+On many print shop workstations, third-party plugins like **SkinFiner cannot be installed** in Photoshop CS6 due to licensing, OS architecture, or compatibility limitations.
 
-### Photoshop Action (`PJK.atn`)
-- Action Set: `PJK`
-- Action Name: `passport`
-- File Location: `c:\FreePro\passportphotoapp\PJK.atn`
-- The application automatically verifies that `PJK.atn` exists. During execution, it loads the action set into Photoshop via ExtendScript if it is not already loaded.
+**PJK Studio includes a dedicated Photoshop CS6 Native Engine:**
+- Operates directly inside Adobe Photoshop CS6 (32-bit & 64-bit).
+- Uses Photoshop's native **Surface Blur** bilateral filter (`Radius: 4.0px, Threshold: 15`).
+- Produces clean, professional skin softening that preserves eyes, eyelashes, lips, hair, and clothing sharpness.
+- Performs center-weighted smart passport cropping (35×45 mm @ 300 DPI).
+- Adds a crisp 1px/2px print border stroke.
+- **Zero third-party plugins needed.** No more "SkinFiner is not available" dialogs!
 
-### SkinFiner Plugin Integration & Built-in Fallback
-- The `PJK.atn` action was recorded using the **SkinFiner** Photoshop plugin (`SkinFiner.8bf`).
-- **If SkinFiner is installed:** The Photoshop action executes with full SkinFiner skin smoothing.
-- **If SkinFiner is missing:** Photoshop actions will throw a runtime error (`The command "SkinFiner" is not currently available`).
-  - **PJK Studio automatically detects this state** and displays an informative banner.
-  - The system activates the **Built-in Studio Passport Engine** fallback, performing:
-    1. Aspect-ratio center-weighted passport crop (35mm × 45mm @ 300 DPI).
-    2. Edge-preserving bilateral skin softening filter.
-    3. Facial contrast and brightness optimization.
-    4. Crisp 1-pixel border stroke.
-- **To Install SkinFiner into Photoshop CS6:**
-  1. Download or locate your `SkinFiner.8bf` (64-bit) plugin file.
-  2. Copy `SkinFiner.8bf` into:
-     `C:\Program Files\Adobe\Adobe Photoshop CS6 (x64)\Plug-ins\`
-  3. Restart Photoshop. The status indicator on the PJK Studio dashboard will turn green.
+### 2. Multi-System Automatic Discovery (Registry & Drives)
+When copied to other computers:
+- Automatically queries the Windows Registry (`HKLM` and `HKCU` under `SOFTWARE\Adobe\Photoshop`) to find the exact Photoshop executable location.
+- Scans `C:`, `D:`, and `E:` drives for 64-bit and 32-bit CS6 installations.
+- All paths are relative and self-healing: moving the project folder to `D:\` or a desktop folder will never break the app.
+
+### 3. Optional SkinFiner Action (`PJK.atn`)
+- If a machine does have SkinFiner installed in `Plug-ins\SkinFiner.8bf`, you can switch the engine mode in **Settings** to **"Photoshop Action (PJK.atn with SkinFiner)"**.
+- If SkinFiner is absent, the system automatically falls back to the Native CS6 Engine or Studio Engine so customer orders are never blocked.
 
 ---
 

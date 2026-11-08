@@ -67,11 +67,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={tab.id}
                   onClick={() => setCurrentTab(tab.id)}
-                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    isActive
+                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
                       ? 'bg-blue-600 text-white shadow-xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                  }`}
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{tab.label}</span>
@@ -90,19 +89,24 @@ export const Navbar: React.FC<NavbarProps> = ({
                   title={health.photoshop_path || 'Photoshop not found'}
                 >
                   <span
-                    className={`w-2 h-2 rounded-full ${
-                      health.photoshop_installed ? 'bg-emerald-500' : 'bg-amber-500'
-                    }`}
+                    className={`w-2 h-2 rounded-full ${health.photoshop_installed ? 'bg-emerald-500' : 'bg-amber-500'
+                      }`}
                   />
-                  <span className="font-medium text-slate-700">Photoshop</span>
+                  <span className="font-medium text-slate-700">
+                    {health.photoshop_installed ? 'PS CS6' : 'Studio Engine'}
+                  </span>
                 </div>
 
                 <span className="text-slate-300">|</span>
 
-                {/* SkinFiner Status */}
+                {/* SkinFiner / Native Mode Status */}
                 <div
                   className="flex items-center space-x-1"
-                  title={health.skinfiner_info}
+                  title={
+                    health.skinfiner_installed
+                      ? 'SkinFiner plugin is active in Photoshop.'
+                      : 'Photoshop CS6 Native Engine active (using built-in Surface Blur, no plugins needed).'
+                  }
                 >
                   {health.skinfiner_installed ? (
                     <>
@@ -111,8 +115,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </>
                   ) : (
                     <>
-                      <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
-                      <span className="text-amber-700 font-medium">No SkinFiner</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
+                      <span className="text-blue-700 font-medium">Native Retouch</span>
                     </>
                   )}
                 </div>

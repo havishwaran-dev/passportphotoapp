@@ -22,11 +22,19 @@ function writeJsonFile(filePath, data) {
     f.close();
 }
 
+// Dynamically resolve project directories
+var scriptFile = new File($.fileName);
+var jsxDir = scriptFile.parent;
+var rootDir = jsxDir.parent.parent;
+var tempDir = new Folder(rootDir + "/backend/temp");
+var resultFile = new File(tempDir + "/ps_status.json");
+
 var result = {
     photoshop_name: app.name,
     photoshop_version: app.version,
     action_loaded: false,
     skinfiner_detected: false,
+    native_cs6_supported: true,
     error: ""
 };
 
@@ -52,34 +60,26 @@ try {
 
     // Attempt to load PJK.atn if not yet loaded
     if (!result.action_loaded) {
-        var atn = new File("C:/FreePro/passportphotoapp/PJK.atn");
+        var atn = new File(rootDir + "/PJK.atn");
         if (atn.exists) {
             try {
                 app.load(atn);
                 result.action_loaded = true;
-            } catch(e) {}
+            } catch (e) { }
         }
     }
 
-    // Probe SkinFiner
-    // SkinFiner installs as a 8bf plugin under Plug-ins or Common Files
-    // Also in Photoshop system info
+    // Check for SkinFiner command
     try {
-        var appRef = new ActionReference();
-        appRef.putEnumerated(charIDToTypeID("capp"), charIDToTypeID("Ordn"), charIDToTypeID("Trgt"));
-        var appDesc = executeActionGet(appRef);
-        if (appDesc.hasKey(charIDToTypeID("SstI"))) {
-            var sinfo = appDesc.getString(charIDToTypeID("SstI"));
-            if (sinfo.toLowerCase().indexOf("skinfiner") >= 0) {
+            var sfId = stringIDToTypeID("SkinFiner");
+            if (app.isCommandAvailable && app.isCommandAvailable(sfId)) {
                 result.skinfiner_detected = true;
             }
-        }
-    } catch(eProbe) {}
+    } catch (e) { }
 
-} catch(err) {
+} catch (err) {
     result.error = err.message || err.toString();
 }
 
 app.preferences.rulerUnits = origRuler;
-writeJsonFile("C:/FreePro/passportphotoapp/backend/temp/ps_probe_result.json", result);
-
+writeJsonFile(resultFile.fsName, result);

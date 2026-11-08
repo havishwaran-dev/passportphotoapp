@@ -72,6 +72,8 @@ class HealthResponse(BaseModel):
     photoshop_running: bool
     skinfiner_installed: bool
     skinfiner_info: str
+    native_cs6_supported: bool = True
+    active_engine_mode: str = "photoshop_cs6_native"
     action_file_exists: bool
     action_file_path: str
     action_set_name: str

@@ -49,6 +49,7 @@ export interface AppSettings {
   action_file_path: string;
   action_set_name: string;
   action_name: string;
+  photoshop_engine_mode?: 'auto' | 'native_cs6' | 'action' | 'builtin_studio';
   passport_width_mm: number;
   passport_height_mm: number;
   dpi: number;
@@ -77,6 +78,8 @@ export interface HealthResponse {
   photoshop_running: boolean;
   skinfiner_installed: boolean;
   skinfiner_info: string;
+  native_cs6_supported?: boolean;
+  active_engine_mode?: string;
   action_file_exists: boolean;
   action_file_path: string;
   action_set_name: string;

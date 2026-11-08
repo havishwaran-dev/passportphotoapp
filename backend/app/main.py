@@ -66,6 +66,8 @@ async def health_check():
         photoshop_running=ps_status["photoshop_running"],
         skinfiner_installed=ps_status["skinfiner_installed"],
         skinfiner_info=ps_status["skinfiner_info"],
+        native_cs6_supported=ps_status.get("native_cs6_supported", True),
+        active_engine_mode=ps_status.get("active_engine_mode", "photoshop_cs6_native"),
         action_file_exists=ps_status["action_file_exists"],
         action_file_path=ps_status["action_file_path"],
         action_set_name=ps_status["action_set_name"],
