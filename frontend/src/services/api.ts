@@ -3,7 +3,9 @@ import {
   AppSettings,
   JobResponse,
   PhotoUploadResponse,
-  PhotoInfo
+  PhotoInfo,
+  GenerateCollagePayload,
+  CollagePresetsResponse
 } from '../types';
 
 const API_BASE = '';
@@ -139,6 +141,25 @@ export async function generateSheet(
 export async function getJob(jobId: string): Promise<JobResponse> {
   const res = await fetch(`${API_BASE}/api/jobs/${jobId}`);
   if (!res.ok) throw new Error(`Failed to fetch job ${jobId}`);
+  return res.json();
+}
+
+export async function fetchCollagePresets(): Promise<CollagePresetsResponse> {
+  const res = await fetch(`${API_BASE}/api/collage/presets`);
+  if (!res.ok) throw new Error(`Failed to load collage presets: ${res.statusText}`);
+  return res.json();
+}
+
+export async function generateCollage(payload: GenerateCollagePayload): Promise<JobResponse> {
+  const res = await fetch(`${API_BASE}/api/collage/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail || 'Collage generation failed');
+  }
   return res.json();
 }
 

@@ -47,6 +47,21 @@ class RotatePhotoRequest(BaseModel):
     photo_id: str
     angle: int  # 90, 180, 270, -90
 
+class GenerateCollageRequest(BaseModel):
+    photos: List[str]  # 2 to 20 photo_ids
+    orientation: Optional[str] = "portrait"  # "portrait" or "landscape"
+    template_id: Optional[str] = "hero_celebration"  # "hero_celebration", "balanced_mosaic", "polaroid"
+    theme_id: Optional[str] = "gold_luxury"  # "gold_luxury", "white", "midnight_blue", "pastel_pink", "sky_celebration", "festive_party"
+    custom_bg_color: Optional[str] = None
+    title: Optional[str] = "HAPPY BIRTHDAY"
+    name: Optional[str] = "CELEBRANT"
+    subtitle: Optional[str] = "Wishing you joy, love & happiness on your special day!"
+    font_family: Optional[str] = "georgia"  # "georgia", "arial", "times", "segoeui", "comic", "impact"
+    font_size_scale: Optional[float] = 1.0
+    show_decorations: Optional[bool] = True
+    rounded_corners: Optional[bool] = True
+    border_width: Optional[int] = 8
+
 class JobResponse(BaseModel):
     job_id: str
     mode: str
@@ -59,6 +74,7 @@ class JobResponse(BaseModel):
     input_photo_id: Optional[str] = None
     output_photo_id: Optional[str] = None
     sheet_id: Optional[str] = None
+    collage_id: Optional[str] = None
     result_url: Optional[str] = None
     preview_url: Optional[str] = None
     error: Optional[str] = None

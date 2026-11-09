@@ -7,8 +7,8 @@ import {
   History,
   Settings,
   CheckCircle2,
-  AlertTriangle,
-  RefreshCw
+  RefreshCw,
+  PartyPopper
 } from 'lucide-react';
 import { HealthResponse } from '../types';
 
@@ -28,7 +28,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Camera },
     { id: 'passport', label: 'Passport Studio', icon: ImageIcon },
-    { id: 'sheet', label: '4×6 Print Sheet', icon: Layers },
+    { id: 'sheet', label: '4×6 Sheet', icon: Layers },
+    { id: 'collage', label: 'Birthday Collage', icon: PartyPopper },
     { id: 'background', label: 'Background Studio', icon: Palette },
     { id: 'history', label: 'History', icon: History },
     { id: 'settings', label: 'Settings', icon: Settings },

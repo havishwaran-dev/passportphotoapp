@@ -9,7 +9,8 @@ import {
   Download,
   Clock,
   Sparkles,
-  Info
+  Info,
+  PartyPopper
 } from 'lucide-react';
 import { HealthResponse, JobResponse } from '../types';
 
@@ -65,6 +66,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
             >
               <Layers className="w-4 h-4" />
               <span>Create 4×6 Sheet</span>
+            </button>
+            <button
+              onClick={() => onNavigate('collage')}
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md transition-all active:scale-95"
+            >
+              <PartyPopper className="w-4 h-4" />
+              <span>Birthday Collage (A4)</span>
             </button>
             <button
               onClick={() => onNavigate('background')}

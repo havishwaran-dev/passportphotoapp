@@ -3,6 +3,7 @@
   "action_file_path": "C:\\FreePro\\passportphotoapp\\PJK.atn",
   "action_set_name": "PJK",
   "action_name": "passport",
+  "photoshop_engine_mode": "auto",
   "passport_width_mm": 35.0,
   "passport_height_mm": 45.0,
   "dpi": 300,

@@ -22,6 +22,7 @@ class Job(BaseModel):
     input_photo_id: Optional[str] = None
     output_photo_id: Optional[str] = None
     sheet_id: Optional[str] = None
+    collage_id: Optional[str] = None
     result_url: Optional[str] = None
     preview_url: Optional[str] = None
     error: Optional[str] = None
@@ -55,7 +56,13 @@ class JobManager:
         except Exception as e:
             logger.warning(f"Failed to save job history: {e}")
 
-    def create_job(self, mode: str, input_photo_id: Optional[str] = None, meta: Optional[Dict[str, Any]] = None) -> Job:
+    def create_job(
+        self,
+        mode: str,
+        input_photo_id: Optional[str] = None,
+        meta: Optional[Dict[str, Any]] = None,
+        message: str = "Queued for processing"
+    ) -> Job:
         job_id = str(uuid.uuid4())
         now = datetime.datetime.now().isoformat()
         job = Job(
@@ -63,7 +70,7 @@ class JobManager:
             mode=mode,
             status="waiting",
             progress=0,
-            message="Queued for processing",
+            message=message,
             created_at=now,
             updated_at=now,
             input_photo_id=input_photo_id,
@@ -82,6 +89,7 @@ class JobManager:
         error: Optional[str] = None,
         output_photo_id: Optional[str] = None,
         sheet_id: Optional[str] = None,
+        collage_id: Optional[str] = None,
         result_url: Optional[str] = None,
         preview_url: Optional[str] = None,
         meta_updates: Optional[Dict[str, Any]] = None
@@ -107,6 +115,8 @@ class JobManager:
             job.output_photo_id = output_photo_id
         if sheet_id is not None:
             job.sheet_id = sheet_id
+        if collage_id is not None:
+            job.collage_id = collage_id
         if result_url is not None:
             job.result_url = result_url
         if preview_url is not None:
@@ -129,6 +139,7 @@ class JobManager:
         jobs = list(self._jobs.values())
         total_photos = sum(1 for j in jobs if j.status == "completed" and j.mode in ("passport", "background", "complete"))
         total_sheets = sum(1 for j in jobs if j.status == "completed" and j.mode == "sheet")
+        total_collages = sum(1 for j in jobs if j.status == "completed" and j.mode == "collage")
 
         # Today's jobs
         today_str = datetime.date.today().isoformat()
@@ -144,12 +155,20 @@ class JobManager:
             and j.mode == "sheet"
             and j.created_at.startswith(today_str)
         )
+        today_collages = sum(
+            1 for j in jobs
+            if j.status == "completed"
+            and j.mode == "collage"
+            and j.created_at.startswith(today_str)
+        )
 
         return {
             "total_photos_processed": total_photos,
             "photos_processed_today": today_photos,
             "total_sheets_generated": total_sheets,
             "sheets_generated_today": today_sheets,
+            "total_collages_generated": total_collages,
+            "collages_generated_today": today_collages,
             "total_jobs": len(jobs)
         }
 

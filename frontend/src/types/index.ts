@@ -28,7 +28,7 @@ export type JobStatus =
 
 export interface JobResponse {
   job_id: string;
-  mode: 'passport' | 'background' | 'complete' | 'sheet';
+  mode: 'passport' | 'background' | 'complete' | 'sheet' | 'collage';
   status: JobStatus;
   progress: number;
   message: string;
@@ -38,6 +38,7 @@ export interface JobResponse {
   input_photo_id?: string;
   output_photo_id?: string;
   sheet_id?: string;
+  collage_id?: string;
   result_url?: string;
   preview_url?: string;
   error?: string;
@@ -97,4 +98,46 @@ export interface SheetPhotoItem {
   photo_id: string;
   copies: number;
   photo?: PhotoInfo;
+}
+
+export interface CollageTemplate {
+  id: string;
+  name: string;
+  description: string;
+  badge: string;
+}
+
+export interface CollageTheme {
+  id: string;
+  name: string;
+  preview_bg: string;
+  preview_accent: string;
+}
+
+export interface CollageFont {
+  id: string;
+  name: string;
+  preview: string;
+}
+
+export interface CollagePresetsResponse {
+  templates: CollageTemplate[];
+  themes: CollageTheme[];
+  fonts: CollageFont[];
+}
+
+export interface GenerateCollagePayload {
+  photos: string[]; // 2 to 20 photo_ids
+  orientation?: 'portrait' | 'landscape';
+  template_id?: string;
+  theme_id?: string;
+  custom_bg_color?: string;
+  title?: string;
+  name?: string;
+  subtitle?: string;
+  font_family?: string;
+  font_size_scale?: number;
+  show_decorations?: boolean;
+  rounded_corners?: boolean;
+  border_width?: number;
 }

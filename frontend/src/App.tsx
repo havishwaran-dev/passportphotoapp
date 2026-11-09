@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Dashboard } from './pages/Dashboard';
 import { PassportStudio } from './pages/PassportStudio';
 import { SheetStudio } from './pages/SheetStudio';
+import { CollageStudio } from './pages/CollageStudio';
 import { BackgroundStudio } from './pages/BackgroundStudio';
 import { HistoryView } from './pages/HistoryView';
 import { SettingsPage } from './pages/SettingsPage';
@@ -93,6 +94,15 @@ export function App() {
 
         {currentTab === 'sheet' && (
           <SheetStudio
+            settings={settings}
+            photos={uploadedPhotos}
+            setPhotos={setUploadedPhotos}
+            onJobFinished={handleRefreshHistory}
+          />
+        )}
+
+        {currentTab === 'collage' && (
+          <CollageStudio
             settings={settings}
             photos={uploadedPhotos}
             setPhotos={setUploadedPhotos}

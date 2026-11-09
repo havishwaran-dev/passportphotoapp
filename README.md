@@ -28,7 +28,16 @@ Designed and built for high-throughput daily printing shop operations, automatin
    - Real-time interactive canvas preview with cutting guide tick marks and spacing sliders.
    - High-quality 300 DPI JPEG output with print-ready borders.
 
-4. **Modern Printing Shop Dashboard UI**
+4. **Birthday Photo Collage Studio (A4 300 DPI - Zero Action Required) 🎂🎉**
+   - **Zero Photoshop Action Dependency:** 100% standalone automated collage engine built right into the studio.
+   - **2 to 20 Photos Dynamic Auto-Arrangement:** Automatically computes balanced mosaic layouts, hero spotlight layouts, or polaroid photo walls based on how many photos the customer provides.
+   - **Exact A4 300 DPI Output:** Standard 210 × 297 mm print dimensions (**2480 × 3508 px** Portrait, **3508 × 2480 px** Landscape).
+   - **Design Templates:** *Hero Spotlight* (large central photo + surrounding moments), *Balanced Mosaic* (harmonious auto-sized grid), and *Polaroid Cards* (tilted cards with white borders and tape accents).
+   - **Typography & Greetings:** Fully customizable Birthday Greeting header, Celebrant Name, Subtitle message, Windows TrueType Font selection (Georgia, Arial, Times New Roman, Segoe UI, Impact, Comic Sans), and font scale control.
+   - **Festive Color Themes:** Royal Gold & Black, Midnight Navy, Studio White, Rose Gold / Pink, Sky Blue Party, and Festive Carnival with optional party confetti accents.
+   - **Print-Shop Ready:** Auto smart-cropping, rounded corners, drop shadows, and high-res print export.
+
+5. **Modern Printing Shop Dashboard UI**
    - Built with React, TypeScript, Vite, and Tailwind CSS.
    - Instant drag-and-drop batch upload with rotation controls (90° CW/CCW).
    - Live Photoshop and SkinFiner connectivity status badge on the navigation bar.
@@ -146,6 +155,21 @@ Double-click `stop.bat` to gracefully terminate all backend and frontend backgro
 6. Click **"Generate Complete 4×6 Sheet"**.
 7. Download and print directly on standard 4×6 inch photo glossy paper!
 
+### Mode 5: Birthday Photo Collage Studio (A4 Size)
+1. Navigate to **Birthday Collage** in the top navigation bar.
+2. Select between **2 to 20 photos** from the customer's uploaded pictures.
+3. Choose a **Design Template**:
+   - **Hero Spotlight:** Highlights 1 main photo large with all other moments arranged neatly around it (click the Star icon on any photo to designate it as Hero).
+   - **Balanced Mosaic:** Harmonious layout with auto-balanced rows and columns.
+   - **Polaroid Cards:** Retro photo cards with white borders, soft drop shadows, and subtle festive card tilts.
+4. Customize the **Birthday Typography & Greeting**:
+   - Title Header (e.g., *"Happy Birthday!"*, *"Celebrating 25 Wonderful Years"*)
+   - Celebrant Name (e.g., *"Sarah Jenkins"*)
+   - Subtitle / Wishes (e.g., *"May your day be filled with joy and laughter!"*)
+   - Font Family (Georgia, Arial, Times New Roman, Segoe UI, Impact, Comic Sans) & Size Slider.
+5. Pick a **Theme** (Royal Gold, Midnight Navy, Studio White, Rose Pink, Sky Party, Festive Carnival) and toggle festive Confetti.
+6. Click **"Generate A4 Collage (300 DPI)"** to produce a 2480 × 3508 px high-resolution poster ready for immediate framing or photo paper printing!
+
 ---
 
 ## 🔌 Adobe Photoshop CS6 Compatibility (No Plugins Required)
@@ -183,12 +207,19 @@ When copied to other computers:
 
 ---
 
-## 🧪 Running Backend Unit Tests
+## 🧪 Running Automated Test Suites
 
-To verify the installation and backend modules independently, run:
+To verify all backend modules, Photoshop CS6 discovery, layout engines, and the Birthday Collage studio, run:
 
 ```bash
+# Core passport & Photoshop automation tests
 python backend/tests/test_backend.py
+
+# Birthday A4 collage engine tests (2-20 slots, templates, fonts, orientations)
+python backend/tests/test_collage.py
+
+# End-to-end REST API & async job lifecycle tests
+python backend/tests/test_e2e_api.py
 ```
 
 Expected output:
