@@ -10,7 +10,8 @@ import {
   Clock,
   Sparkles,
   Info,
-  PartyPopper
+  PartyPopper,
+  FileImage
 } from 'lucide-react';
 import { HealthResponse, JobResponse } from '../types';
 
@@ -73,6 +74,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
             >
               <PartyPopper className="w-4 h-4" />
               <span>Birthday Collage (A4)</span>
+            </button>
+            <button
+              onClick={() => onNavigate('templates')}
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-md transition-all active:scale-95"
+            >
+              <FileImage className="w-4 h-4" />
+              <span>PSD Templates (700+)</span>
             </button>
             <button
               onClick={() => onNavigate('background')}

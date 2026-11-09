@@ -10,12 +10,18 @@ from app.config.settings import get_settings
 from app.services.job_manager import job_manager
 from app.schemas.schemas import GenerateCollageRequest, JobResponse
 from app.photo_layout.collage_engine import birthday_collage_engine, THEME_COLORS, FONT_MAP
+from app.api.photos import get_photo_path
 
 router = APIRouter(prefix="/api/collage", tags=["birthday_collage"])
 logger = logging.getLogger("collage_api")
 
 def resolve_photo_path(photo_id: str, settings) -> Path:
     """Finds photo file path by photo_id in uploads or outputs."""
+    # First try photo registry
+    reg_p = get_photo_path(photo_id)
+    if reg_p and reg_p.exists():
+        return reg_p
+
     up_dir = Path(settings.upload_folder)
     out_dir = Path(settings.output_folder)
 
@@ -108,6 +114,7 @@ async def process_collage_job(
 
 
 @router.post("/generate", response_model=JobResponse)
+@router.post("/generate/", response_model=JobResponse)
 async def generate_collage(req: GenerateCollageRequest, background_tasks: BackgroundTasks):
     """
     Arranges 2 to 20 photographs into a print-ready A4 Birthday Collage poster at 300 DPI.
@@ -182,6 +189,7 @@ async def download_collage(collage_id: str):
 
 
 @router.get("/presets")
+@router.get("/presets/")
 async def get_presets():
     """Returns available templates, themes, and typography options."""
     templates = [

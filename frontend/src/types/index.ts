@@ -141,3 +141,73 @@ export interface GenerateCollagePayload {
   rounded_corners?: boolean;
   border_width?: number;
 }
+
+export interface TemplateCategory {
+  name: string;
+  count: number;
+}
+
+export interface TemplateSummary {
+  template_id: string;
+  name: string;
+  category: string;
+  file_path: string;
+  width: number;
+  height: number;
+  photo_slots_count: number;
+  text_slots_count: number;
+  preview_url: string;
+}
+
+export interface TemplatesListResponse {
+  total: number;
+  limit: number;
+  offset: number;
+  templates: TemplateSummary[];
+}
+
+export interface TemplatePhotoSlot {
+  layer_name: string;
+  slot_id: string;
+  bbox: [number, number, number, number];
+  width: number;
+  height: number;
+  kind: string;
+}
+
+export interface TemplateTextSlot {
+  layer_name: string;
+  original_text: string;
+  bbox?: [number, number, number, number];
+  font_size?: number;
+}
+
+export interface TemplateDetail {
+  template_id: string;
+  name: string;
+  category: string;
+  file_path: string;
+  width: number;
+  height: number;
+  photo_slots: TemplatePhotoSlot[];
+  text_slots: TemplateTextSlot[];
+  preview_url: string;
+}
+
+export interface PhotoSlotAssignment {
+  slot_name: string;
+  photo_id: string;
+}
+
+export interface TextSlotAssignment {
+  layer_name: string;
+  text: string;
+}
+
+export interface GenerateTemplatePayload {
+  template_id: string;
+  photo_assignments: PhotoSlotAssignment[];
+  text_assignments: TextSlotAssignment[];
+  engine?: string;
+  jpeg_quality?: number;
+}

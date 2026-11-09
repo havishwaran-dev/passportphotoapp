@@ -8,7 +8,8 @@ import {
   Settings,
   CheckCircle2,
   RefreshCw,
-  PartyPopper
+  PartyPopper,
+  FileImage
 } from 'lucide-react';
 import { HealthResponse } from '../types';
 
@@ -30,6 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'passport', label: 'Passport Studio', icon: ImageIcon },
     { id: 'sheet', label: '4×6 Sheet', icon: Layers },
     { id: 'collage', label: 'Birthday Collage', icon: PartyPopper },
+    { id: 'templates', label: 'PSD Templates', icon: FileImage },
     { id: 'background', label: 'Background Studio', icon: Palette },
     { id: 'history', label: 'History', icon: History },
     { id: 'settings', label: 'Settings', icon: Settings },

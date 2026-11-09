@@ -5,7 +5,11 @@ import {
   PhotoUploadResponse,
   PhotoInfo,
   GenerateCollagePayload,
-  CollagePresetsResponse
+  CollagePresetsResponse,
+  TemplateCategory,
+  TemplatesListResponse,
+  TemplateDetail,
+  GenerateTemplatePayload
 } from '../types';
 
 const API_BASE = '';
@@ -159,6 +163,49 @@ export async function generateCollage(payload: GenerateCollagePayload): Promise<
   if (!res.ok) {
     const err = await res.json().catch(() => ({ detail: res.statusText }));
     throw new Error(err.detail || 'Collage generation failed');
+  }
+  return res.json();
+}
+
+export async function fetchTemplateCategories(): Promise<TemplateCategory[]> {
+  const res = await fetch(`${API_BASE}/api/templates/categories`);
+  if (!res.ok) throw new Error(`Failed to load template categories: ${res.statusText}`);
+  const data = await res.json();
+  return data.categories || [];
+}
+
+export async function fetchTemplates(
+  category?: string,
+  search?: string,
+  limit: number = 40,
+  offset: number = 0
+): Promise<TemplatesListResponse> {
+  const params = new URLSearchParams();
+  if (category && category !== 'all') params.append('category', category);
+  if (search) params.append('search', search);
+  params.append('limit', limit.toString());
+  params.append('offset', offset.toString());
+
+  const res = await fetch(`${API_BASE}/api/templates?${params.toString()}`);
+  if (!res.ok) throw new Error(`Failed to load templates: ${res.statusText}`);
+  return res.json();
+}
+
+export async function fetchTemplateDetails(templateId: string): Promise<TemplateDetail> {
+  const res = await fetch(`${API_BASE}/api/templates/${templateId}/details`);
+  if (!res.ok) throw new Error(`Failed to load template details: ${res.statusText}`);
+  return res.json();
+}
+
+export async function generateTemplate(payload: GenerateTemplatePayload): Promise<JobResponse> {
+  const res = await fetch(`${API_BASE}/api/templates/generate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail || 'Template generation failed');
   }
   return res.json();
 }

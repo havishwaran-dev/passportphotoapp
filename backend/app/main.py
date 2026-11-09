@@ -14,6 +14,7 @@ from app.api.jobs import router as jobs_router
 from app.api.settings_api import router as settings_router
 from app.api.history import router as history_router
 from app.api.collage import router as collage_router
+from app.api.templates_api import router as templates_router
 
 logging.basicConfig(
     level=logging.INFO,
@@ -53,6 +54,7 @@ app.include_router(jobs_router)
 app.include_router(settings_router)
 app.include_router(history_router)
 app.include_router(collage_router)
+app.include_router(templates_router)
 
 @app.get("/api/health", response_model=HealthResponse)
 async def health_check():

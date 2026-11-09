@@ -37,7 +37,13 @@ Designed and built for high-throughput daily printing shop operations, automatin
    - **Festive Color Themes:** Royal Gold & Black, Midnight Navy, Studio White, Rose Gold / Pink, Sky Blue Party, and Festive Carnival with optional party confetti accents.
    - **Print-Shop Ready:** Auto smart-cropping, rounded corners, drop shadows, and high-res print export.
 
-5. **Modern Printing Shop Dashboard UI**
+5. **PSD Template Automation Studio (700+ Templates in `C:\photodesings`) 🎨🖼️**
+   - **Direct Integration with `C:\photodesings`:** Automatically discovers and categorizes over **700+ commercial PSD design templates** (Birthday Frames, Anniversary Collages, Wedding Days-to-Go, Instagram Stories & Posts, and Multi-Photo Wall Frames).
+   - **Automatic Layer Discovery:** Instantly extracts photo placeholder slots, mask shapes, and editable typography text layers (names, months, dates, quotes).
+   - **Zero-Crash Standalone Engine (`psd-tools` + Pillow):** High-speed 300 DPI compositing in **under 1 second** without relying on external plugins or hanging Photoshop modal dialogs.
+   - **Interactive Visual Studio:** Browse by category with live web thumbnails, search by name, assign customer photos to slots with 1-click, edit celebrant names/wishes, and download high-res print outputs.
+
+6. **Modern Printing Shop Dashboard UI**
    - Built with React, TypeScript, Vite, and Tailwind CSS.
    - Instant drag-and-drop batch upload with rotation controls (90° CW/CCW).
    - Live Photoshop and SkinFiner connectivity status badge on the navigation bar.
@@ -170,6 +176,16 @@ Double-click `stop.bat` to gracefully terminate all backend and frontend backgro
 5. Pick a **Theme** (Royal Gold, Midnight Navy, Studio White, Rose Pink, Sky Party, Festive Carnival) and toggle festive Confetti.
 6. Click **"Generate A4 Collage (300 DPI)"** to produce a 2480 × 3508 px high-resolution poster ready for immediate framing or photo paper printing!
 
+### Mode 6: PSD Template Studio (700+ Master Templates in `C:\photodesings`)
+1. Navigate to **PSD Templates** in the top navigation bar (or click the quick launch card on the Dashboard).
+2. Filter by Category (e.g., *Birthday & Anniversary Frames*, *Insta Collage Kit*, *Instagram Stories*, *Days to Go Wedding*, *Mix Size Frames*) or search for any template by name.
+3. Click any template card to open the **Customization Drawer**:
+   - The system inspects the template layers and displays the exact photo slots and editable text fields.
+   - Assign customer photos to Slot 1, Slot 2, etc. with 1 click from your uploaded library.
+   - Type the customer's name, event date, or custom wishes into the detected text fields (e.g., replacing *"Monika"* with *"PJK Customer"*).
+4. Click **"Generate Ready-To-Print Poster (300 DPI)"**.
+5. In **under 1 second**, the system generates the finished print output at exact template dimensions (e.g. 2400 × 3600 px @ 300 DPI), ready for immediate printing and framing!
+
 ---
 
 ## 🔌 Adobe Photoshop CS6 Compatibility (No Plugins Required)
@@ -217,6 +233,9 @@ python backend/tests/test_backend.py
 
 # Birthday A4 collage engine tests (2-20 slots, templates, fonts, orientations)
 python backend/tests/test_collage.py
+
+# PSD Template Studio automation tests (700+ templates in C:\photodesings)
+python backend/tests/test_templates.py
 
 # End-to-end REST API & async job lifecycle tests
 python backend/tests/test_e2e_api.py
