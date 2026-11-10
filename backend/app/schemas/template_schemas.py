@@ -10,10 +10,12 @@ class TemplateTextSlot(BaseModel):
 class TemplatePhotoSlot(BaseModel):
     layer_name: str
     slot_id: str
+    display_name: Optional[str] = None
     bbox: List[int] # [x1, y1, x2, y2]
     width: int
     height: int
     kind: str = "pixel"
+    has_clipping_mask: Optional[bool] = False
 
 class TemplateSummary(BaseModel):
     template_id: str

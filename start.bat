@@ -10,12 +10,12 @@ echo.
 cd /d "%~dp0"
 
 echo [1/4] Cleaning up any old processes on ports 8000 and 5173...
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-NetTCPConnection -LocalPort 8000, 5173 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Stop-Process -Id (Get-NetTCPConnection -LocalPort 8000, 5173 -ErrorAction SilentlyContinue).OwningProcess -Force -ErrorAction SilentlyContinue"
 
 echo.
 echo [2/4] Starting Backend Server [FastAPI on port 8000]...
 pushd "%~dp0backend"
-start "PJK Studio Backend [Port 8000]" cmd /k "title PJK Studio Backend [Port 8000] && python -m uvicorn app.main:app --host 127.0.0.1 --port 8000"
+start "PJK Studio Backend [Port 8000]" cmd /k "title PJK Studio Backend [Port 8000] && python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --reload-dir app"
 popd
 
 echo Waiting for backend server initialization...
@@ -34,7 +34,7 @@ popd
 set TARGET_URL=http://localhost:5173
 
 echo Waiting for frontend dashboard...
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$ready = $false; for ($i=0; $i -lt 25; $i++) { try { $r = Invoke-WebRequest -Uri 'http://localhost:5173' -UseBasicParsing -TimeoutSec 1; if ($r.StatusCode -eq 200) { $ready = $true; break } } catch {}; Start-Sleep -Milliseconds 400 }; if ($ready) { Write-Host ' [OK] Frontend dashboard is ready!' -ForegroundColor Green } else { Write-Host ' [WARN] Frontend took longer to respond. Proceeding...' -ForegroundColor Yellow }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "$ready = $false; for ($i=0; $i -lt 25; $i++) { try { $r = Invoke-WebRequest -Uri 'http://127.0.0.1:5173' -UseBasicParsing -TimeoutSec 1; if ($r.StatusCode -eq 200) { $ready = $true; break } } catch {}; Start-Sleep -Milliseconds 400 }; if ($ready) { Write-Host ' [OK] Frontend dashboard is ready!' -ForegroundColor Green } else { Write-Host ' [WARN] Frontend took longer to respond. Proceeding...' -ForegroundColor Yellow }"
 
 :LAUNCH_BROWSER
 echo.

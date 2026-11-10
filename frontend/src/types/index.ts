@@ -169,10 +169,12 @@ export interface TemplatesListResponse {
 export interface TemplatePhotoSlot {
   layer_name: string;
   slot_id: string;
+  display_name?: string;
   bbox: [number, number, number, number];
   width: number;
   height: number;
   kind: string;
+  has_clipping_mask?: boolean;
 }
 
 export interface TemplateTextSlot {

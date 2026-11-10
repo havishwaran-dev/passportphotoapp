@@ -100,12 +100,8 @@ export const PSDTemplateStudio: React.FC<PSDTemplateStudioProps> = ({
       const details = await fetchTemplateDetails(tmpl.template_id);
       setTemplateDetails(details);
 
-      // Initialize text fields with their original text
-      const initialTexts: Record<string, string> = {};
-      details.text_slots.forEach((ts) => {
-        initialTexts[ts.layer_name] = ts.original_text;
-      });
-      setTextAssignments(initialTexts);
+      // Initialize text fields as empty so original PSD typography is preserved unless explicitly changed
+      setTextAssignments({});
 
       // Pre-assign available customer photos to slots
       const initialPhotos: Record<string, string> = {};
@@ -137,10 +133,12 @@ export const PSDTemplateStudio: React.FC<PSDTemplateStudioProps> = ({
           slot_name,
           photo_id
         })),
-        text_assignments: Object.entries(textAssignments).map(([layer_name, text]) => ({
-          layer_name,
-          text
-        })),
+        text_assignments: Object.entries(textAssignments)
+          .filter(([_, text]) => text && text.trim().length > 0)
+          .map(([layer_name, text]) => ({
+            layer_name,
+            text: text.trim()
+          })),
         engine: 'fast_studio',
         jpeg_quality: 95
       };
@@ -433,8 +431,11 @@ export const PSDTemplateStudio: React.FC<PSDTemplateStudioProps> = ({
                               className="p-2.5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-1.5"
                             >
                               <div className="flex items-center justify-between text-xs">
-                                <span className="font-bold text-slate-800">
-                                  Slot #{sIdx + 1}: {slot.layer_name}
+                                <span className="font-bold text-slate-800 flex items-center space-x-1.5">
+                                  <span>Slot #{sIdx + 1}: {slot.display_name || slot.layer_name}</span>
+                                  {slot.display_name?.includes('Hero') && (
+                                    <span className="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full font-bold">HERO</span>
+                                  )}
                                 </span>
                                 <span className="text-[10px] font-mono text-slate-500">
                                   {slot.width} × {slot.height} px
@@ -485,9 +486,12 @@ export const PSDTemplateStudio: React.FC<PSDTemplateStudioProps> = ({
                     {/* Section 2: Editable Typography & Text Layers */}
                     {templateDetails.text_slots.length > 0 && (
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center space-x-1.5">
-                          <Type className="w-3.5 h-3.5 text-indigo-600" />
-                          <span>Customize Text Layers ({templateDetails.text_slots.length} Fields)</span>
+                        <label className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center justify-between">
+                          <span className="flex items-center space-x-1.5">
+                            <Type className="w-3.5 h-3.5 text-indigo-600" />
+                            <span>Customize Text Layers ({templateDetails.text_slots.length} Fields)</span>
+                          </span>
+                          <span className="text-[10px] font-normal text-slate-400 lowercase">Leave blank to keep original text</span>
                         </label>
 
                         <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
@@ -498,14 +502,14 @@ export const PSDTemplateStudio: React.FC<PSDTemplateStudioProps> = ({
                               </label>
                               <input
                                 type="text"
-                                value={textAssignments[ts.layer_name] ?? ts.original_text}
+                                value={textAssignments[ts.layer_name] || ''}
                                 onChange={(e) =>
                                   setTextAssignments((prev) => ({
                                     ...prev,
                                     [ts.layer_name]: e.target.value
                                   }))
                                 }
-                                placeholder={ts.original_text}
+                                placeholder={`Original: "${ts.original_text}" (type here to customize)`}
                                 className="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500"
                               />
                             </div>
